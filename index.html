@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İndir / Download | OVER-THE-TOP BOX 1.0</title>
+    <style>
+        :root {
+            --accent: #00ffcc;
+            --bg: #050005;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body, html {
+            margin: 0; padding: 0; height: 100%;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Arka Plan Efekti */
+        .grid-bg {
+            position: absolute;
+            width: 200%; height: 200%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 204, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 204, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(500px) rotateX(60deg);
+            top: -50%;
+            z-index: -1;
+            animation: move 10s linear infinite;
+        }
+
+        @keyframes move {
+            from { background-position: 0 0; }
+            to { background-position: 0 100px; }
+        }
+
+        .download-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 255, 204, 0.1);
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px var(--accent);
+        }
+
+        .instruction-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin: 25px 0;
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .instruction-box div { margin-bottom: 15px; }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #00ffcc 0%, #00aaff 100%);
+            color: #000;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 255, 204, 0.3);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px var(--accent);
+            filter: brightness(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <div class="download-card">
+        <h1>OVER-THE-TOP BOX 1.0</h1>
+        <p>Proje dosyalarını tek bir parça halinde indirin.<br>Download the project files as a single package.</p>
+
+        <div class="instruction-box">
+            <div>
+                <strong>🇹🇷 Kurulum:</strong><br>
+                Aşağıdaki butona tıklayarak ZIP dosyasını indirin. Dosyayı açın OVER-THE-TOP BOX 1.0 klasörünü çıkarttıktan sonra içini açın ve <code>index.html</code> dosyasını tarayıcınıza sürükleyin ve bırakın.
+            </div>
+            <div>
+                <strong>🇺🇸 Installation:</strong><br>
+                Click the button below to download the ZIP file. After extracting the files, drag and drop the <code>index.html</code> file into your browser.
+            </div>
+        </div>
+
+        <a href="OVER-THE-TOP-BOX-1.0.zip" class="download-btn" download>
+            📦 İNDİR / DOWNLOAD (.ZIP)
+        </a>
+
+    </div>
+
+</body>
+</html>
