@@ -16,7 +16,7 @@ Zorluk sistemi, mağaza, otomatik tıklayıcılar, seviye sistemi ve şifre koru
 
 ### 📥 Kurulum
 - ZIP dosyasını indirin.  
-- **OVER-THE-TOP BOX 1.1** klasörünü çıkartın.  
+- **OVER-THE-TOP BOX 1.2** klasörünü çıkartın.  
 - İçindeki **index.html** dosyasını tarayıcıya sürükleyerek açın.
 
 ---
@@ -58,7 +58,7 @@ Includes difficulty modes, shop upgrades, auto‑clickers, level progression, an
 
 ### 📥 Installation
 - Download the ZIP file.  
-- Extract the **OVER-THE-TOP BOX 1.1** folder.  
+- Extract the **OVER-THE-TOP BOX 1.2** folder.  
 - Drag **index.html** into your browser to start the game.
 
 ---
@@ -101,6 +101,7 @@ Delete the old version folder and use the new one.
 ## 📜 Lisans / License
 Bu proje kişisel kullanım içindir.  
 This project is for personal use only.
+
 
 
 
