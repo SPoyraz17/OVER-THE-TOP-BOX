@@ -22,17 +22,46 @@ Zorluk sistemi, mağaza, otomatik tıklayıcılar, seviye sistemi ve şifre koru
 ---
 
 ### 🔄 Güncelleme
-Yeni sürümü indirmek için:  
-**https://spoyraz17.github.io/OVER-THE-TOP-BOX/**  
+Yeni sürümü indirmek için:
+👉 [OVER-THE-TOP BOX Website](https://spoyraz17.github.io/OVER-THE-TOP-BOX/)  
 Eski sürüm klasörünü silin ve bu yeni dosyayı kullanın.
 
 ---
 
-### 🚀 V1.1 Yenilikleri
-- **Hata Çözümü:** Sağ tık engellendi.  
-- **Mağaza Düzeltmesi:** Sinir bozucu kare küçültme mekaniği kaldırıldı.  
-- **Mağaza Güncellemesi:** Yeni otomatik tıklayıcılar eklendi (1/s, 5/s, 10/s, 100/s).  
-- **Sistem Güncellemesi:** Kolay, Orta ve Zor zorluk seviyeleri eklendi.
+### 🚀 1.2 Güncelleme Notları
+⚡ Combo Sistemi (Refleks Odaklı)
+
+Oyuncu 1 saniye içinde tekrar tıklarsa Combo başlar.
+
+Combo arttıkça (x2, x3, x4…) kazanılan para ve XP çarpanla artar.
+
+Combo kesilirse çarpan sıfırlanır.
+
+Ekranda yanıp sönen COMBO XN göstergesi eklendi.
+
+Amaç: hızlı refleksi ödüllendirmek ve tempoyu artırmak.
+
+⭐ Şanslı Altın Kutu (Event Sistemi)
+
+Her 50 tıklamada normal kutu yerine 3 saniyelik Altın Kutu çıkar.
+
+Altın Kutuya tıklamak 10x para kazandırır.
+
+Nadir event sistemi ile oyuncunun sürekli ekrana odaklanması sağlandı.
+
+🎨 Dinamik Tema Sistemi (Görsel İlerleme)
+
+Seviye ilerledikçe oyun teması değişir:
+
+Level 0–25 → Standart karanlık tema
+
+Level 26–50 → Neon Mavi / Cyberpunk tema
+
+Level 51–75 → Lav / Cehennem teması
+
+Level 76–100 → Altın / Efsanevi tema
+
+Oyuncunun ilerleme hissini güçlendirmek için görsel geri bildirim eklendi.
 
 ---
 
@@ -64,18 +93,44 @@ Includes difficulty modes, shop upgrades, auto‑clickers, level progression, an
 ---
 
 ### 🔄 Updating
-Download the new version from:  
-**https://spoyraz17.github.io/OVER-THE-TOP-BOX/**  
+Download the new version from:
+👉 [OVER-THE-TOP BOX Website](https://spoyraz17.github.io/OVER-THE-TOP-BOX/) 
 Delete the old version folder and use the new one.
 
 ---
 
-### 🚀 V1.1 Changelog
-- **Bug Fix:** Disabled right‑click.  
-- **Shop Fix:** Removed the annoying shrinking‑square mechanic.  
-- **Shop Update:** Added new auto‑clicker items (1/s, 5/s, 10/s, 100/s).  
-- **Logic Update:** Added Easy, Medium, and Hard difficulty levels.
+### 🚀 V1.2 Changelog
+⚡ Combo System (Reflex-Based)
 
+Clicking again within 1 second starts a combo.
+
+Higher combo (x2, x3, x4…) multiplies money and XP rewards.
+
+Combo resets if timing fails.
+
+Flashing COMBO XN indicator added.
+
+Purpose: reward fast reactions and increase game pace.
+
+⭐ Lucky Golden Box (Event System)
+
+Every 50 clicks, a Golden Box appears for 3 seconds.
+
+Clicking it grants 10x money reward.
+
+Rare event mechanic keeps players focused.
+
+🎨 Dynamic Theme System (Visual Progression)
+
+Level 0–25 → Default dark theme
+
+Level 26–50 → Neon Blue / Cyberpunk theme
+
+Level 51–75 → Lava / Hell theme
+
+Level 76–100 → Golden / Legendary theme
+
+Visual feedback added to strengthen progression feeling.
 ---
 
 ### 🧩 Features
@@ -101,6 +156,7 @@ Delete the old version folder and use the new one.
 ## 📜 Lisans / License
 Bu proje kişisel kullanım içindir.  
 This project is for personal use only.
+
 
 
 
