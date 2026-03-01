@@ -1,214 +1,204 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İndir / Download | OVER-THE-TOP BOX 1.2</title>
-    <style>
-        :root {
-            --accent: #00ffcc;
-            --bg: #050005;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>İndir / Download | OVER-THE-TOP BOX 1.2</title>
+<style>
+:root{
+  --accent:#00ffcc;
+  --bg:#050005;
+  --glass:rgba(255,255,255,0.05);
+}
+*{box-sizing:border-box}
+body,html{
+  margin:0;padding:0;min-height:100%;
+  font-family:'Segoe UI',system-ui,Arial,sans-serif;
+  background:var(--bg);color:#fff;
+  display:flex;justify-content:center;align-items:center;
+  overflow-y:auto;
+}
 
-        body, html {
-            margin: 0; padding: 0; min-height: 100%;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: var(--bg);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-y: auto; /* İçerik uzarsa kaydırma çubuğu çıkar */
-        }
+/* Arkaplan ızgarası */
+.grid-bg{
+  position:fixed;width:200%;height:200%;
+  background-image:
+    linear-gradient(rgba(0,255,204,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,204,0.05) 1px, transparent 1px);
+  background-size:50px 50px;
+  transform:perspective(500px) rotateX(60deg);
+  top:-50%;z-index:-1;animation:move 10s linear infinite;
+}
+@keyframes move{from{background-position:0 0}to{background-position:0 100px}}
 
-        .grid-bg {
-            position: fixed;
-            width: 200%; height: 200%;
-            background-image: 
-                linear-gradient(rgba(0, 255, 204, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 204, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            transform: perspective(500px) rotateX(60deg);
-            top: -50%;
-            z-index: -1;
-            animation: move 10s linear infinite;
-        }
+.download-card{
+  background:var(--glass);backdrop-filter:blur(15px);
+  border:1px solid rgba(0,255,204,0.1);
+  padding:30px 40px;border-radius:24px;text-align:left;
+  max-width:900px;width:92%;box-shadow:0 20px 50px rgba(0,0,0,0.5);
+  margin:40px 0;
+}
+.header-row{display:flex;align-items:center;gap:20px;justify-content:space-between}
+.title-left{display:flex;flex-direction:column;gap:6px}
+h1{font-size:2.1rem;margin:0;color:#fff;text-shadow:0 0 15px var(--accent)}
+.version-tag{color:var(--accent);font-weight:700;letter-spacing:2px}
 
-        @keyframes move {
-            from { background-position: 0 0; }
-            to { background-position: 0 100px; }
-        }
+/* İçerik */
+.instruction-box{background:rgba(0,0,0,0.42);border-left:4px solid var(--accent);padding:20px;margin-top:18px;font-size:0.96rem;line-height:1.6;border-radius:8px}
+.lang-row{display:flex;gap:18px;flex-wrap:wrap}
+.lang-col{flex:1;min-width:260px}
 
-        .download-card {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(0, 255, 204, 0.1);
-            padding: 30px 40px;
-            border-radius: 24px;
-            text-align: center;
-            max-width: 650px;
-            width: 90%;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            margin: 40px 0;
-        }
+/* küçük başlık */
+.title-sm{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent);margin-bottom:8px}
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-            text-shadow: 0 0 15px var(--accent);
-        }
+/* changelog */
+.changelog{font-size:0.88rem;color:#ddd;margin-top:10px;padding-left:18px}
+.changelog li{margin-bottom:6px}
+.highlight{color:var(--accent);font-weight:700}
 
-        .version-tag {
-            color: var(--accent);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            display: block;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
+/* buton */
+.actions{margin-top:18px}
+.download-btn{
+  display:inline-block;background:linear-gradient(135deg,#00ffcc 0%,#00aaff 100%);
+  color:#000;text-decoration:none;padding:16px 28px;border-radius:12px;font-weight:800;
+  font-size:1.05rem;box-shadow:0 10px 22px rgba(0,255,204,0.22);
+  transition:transform .18s,box-shadow .18s;width:100%;text-align:center;box-sizing:border-box;
+}
+.download-btn:hover{transform:translateY(-3px);box-shadow:0 16px 36px var(--accent)}
+.note{font-size:0.85rem;color:#cfd8dc;margin-top:8px}
 
-        .instruction-box {
-            background: rgba(0, 0, 0, 0.4);
-            border-left: 4px solid var(--accent);
-            padding: 20px;
-            margin: 25px 0;
-            text-align: left;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+/* popup — ekran ortası, büyük, mat */
+#thanks-popup{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0.9);
+  width:86%;
+  max-width:720px;
+  background:rgba(10,10,10,0.92); /* mat siyah */
+  color:var(--accent);
+  padding:36px 28px;
+  border-radius:18px;
+  text-align:center;
+  font-size:1.35rem;
+  font-weight:700;
+  box-shadow:0 18px 60px rgba(0,0,0,0.75);
+  z-index:9999;
+  opacity:0;
+  transition:opacity .28s ease, transform .28s ease;
+  pointer-events:none;
+}
+#thanks-popup.show{
+  transform:translate(-50%,-50%) scale(1);
+  opacity:1;
+  pointer-events:auto;
+}
+/* Kapatma butonu (sağ çapraz) */
+#thanks-popup .close-btn{
+  position:absolute; top:12px; right:14px;
+  width:38px; height:38px; line-height:38px;
+  border-radius:8px; background:rgba(255,255,255,0.04);
+  color:#ccc; font-size:20px; cursor:pointer; border:none;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .15s,color .15s;
+}
+#thanks-popup .close-btn:hover{background:rgba(255,255,255,0.08); color:#fff}
 
-        .lang-section { margin-bottom: 20px; }
-        .lang-section:last-child { margin-bottom: 0; }
-
-        .title-sm {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: bold;
-            color: var(--accent);
-            margin-bottom: 5px;
-        }
-
-        .changelog {
-            font-size: 0.85rem;
-            color: #ddd;
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-
-        .changelog li { margin-bottom: 5px; }
-        .highlight { color: var(--accent); font-weight: bold; }
-
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #00ffcc 0%, #00aaff 100%);
-            color: #000;
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0, 255, 204, 0.3);
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 10px;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px var(--accent);
-            filter: brightness(1.1);
-        }
-
-        code {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: #00ffcc;
-        }
-    </style>
+/* küçük responsive düzen */
+@media(max-width:760px){
+  .download-card{padding:20px}
+  #thanks-popup{font-size:1.1rem;padding:26px}
+}
+</style>
 </head>
 <body>
 
-    <div class="grid-bg"></div>
+<div class="grid-bg"></div>
 
-    <div class="download-card">
-        <h1>OVER-THE-TOP BOX</h1>
-        <span class="version-tag">VERSION 1.2 ✨</span>
+<div class="download-card">
+  <div class="header-row">
+    <div class="title-left">
+      <h1>OVER-THE-TOP BOX</h1>
+      <span class="version-tag">SÜRÜM 1.2 ✨</span>
+    </div>
+    <div style="text-align:right">
+      <div style="font-size:0.92rem;color:#cfd8dc">Refleks tabanlı tıklama oyunu</div>
+      <div style="margin-top:8px"><span style="font-size:0.85rem;color:#9aa8ac">ZIP içerik boyutu: ~19KB (örnek)</span></div>
+    </div>
+  </div>
 
-        <div class="instruction-box">
-            <div class="lang-section">
-                <div class="title-sm">🇹🇷 TÜRKÇE</div>
-                <strong>Kurulum:</strong> ZIP dosyasını indirin. <code>OVER-THE-TOP BOX 1.2</code> klasörünü çıkartın ve içindeki <code>index.html</code> dosyasını tarayıcıya sürükleyin. <br>
-                <strong>Güncelleme:</strong> Eski sürüm klasörünü silin ve bu yeni dosyayı kullanın.
-                
-                <div style="margin-top: 15px;"><strong>🚀 V1.2 Yenilikleri:</strong></div>
-                <ul class="changelog">
-                    <li><span class="highlight">⚡ Combo sistemi (refleks odaklı) </span> Oyuncu 1 saniye içinde tekrar tıklarsa Combo başlar. Combo arttıkça (x2, x3, x4…) kazanılan para ve XP çarpanla artar. .</li>
-                    <li><span class="highlight">⭐ Şanslı Altın Kutu (Event Sistemi) </span> Her 50 tıklayışta 3 saniyelik altın kutu çıkar.</li>
-                    <li><span class="highlight">🎨 Dinamik Tema Sistemi (Görsel İlerleme) </span> Seviye ilerledikçe oyun teması değişir: Level 0–25 → Standart karanlık tema Level 26–50 → Neon Mavi / Cyberpunk tema Level 51–75 → Lav / Cehennem teması Level 76–100 → Altın / Efsanevi tema</li>
-                </ul>
-            </div>
+  <div class="instruction-box">
+    <div class="lang-row">
+      <div class="lang-col">
+        <div class="title-sm">🇹🇷 TÜRKÇE</div>
+        <strong>Kurulum:</strong> ZIP dosyasını indirin. <code>OVER-THE-TOP BOX 1.2</code> klasörünü çıkartın ve içindeki <code>index.html</code> dosyasını tarayıcıya sürükleyin.<br>
+        <strong>Güncelleme:</strong> Eski sürüm klasörünü silin ve bu yeni dosyayı kullanın.
 
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+        <div style="margin-top:12px;"><strong>🚀 V1.2 Yenilikleri:</strong></div>
+        <ul class="changelog">
+          <li><span class="highlight">⚡ Combo Sistemi (Refleks Odaklı)</span> — 1 saniye içinde tekrar tıklayanlara combo çarpanı verilir (x2, x3...).</li>
+          <li><span class="highlight">⭐ Şanslı Altın Kutu</span> — Her 50 tıklamada 3 saniyeliğine ALTIN kutu çıkar (10x ödül).</li>
+          <li><span class="highlight">🎨 Dinamik Tema Sistemi</span> — Seviyelere göre tema değişir: 0–25 karanlık, 26–50 neon, 51–75 lav, 76–100 altın.</li>
+        </ul>
+      </div>
 
-            <div class="lang-section">
-                <div class="title-sm">🇺🇸 ENGLISH</div>
-                <strong>Installation:</strong> Download the ZIP. Extract the <code>OVER-THE-TOP BOX 1.2</code> folder and drag <code>index.html</code> into your browser. <br>
-                <strong>Updating:</strong> Delete the old version folder and use this new one.
+      <div class="lang-col">
+        <div class="title-sm">🇺🇸 ENGLISH</div>
+        <strong>Installation:</strong> Download the ZIP. Extract the <code>OVER-THE-TOP BOX 1.2</code> folder and drag <code>index.html</code> into your browser.<br>
+        <strong>Updating:</strong> Delete the old version folder and use this new one.
 
-                <div style="margin-top: 15px;"><strong>🚀 V1.2 Changelog:</strong></div>
-                <ul class="changelog">
-                    <li><span class="highlight">Combo system (Reflex-Based)</span> Clicking again within 1 second starts a combo. Higher combo (x2, x3, x4…) multiplies money and XP rewards.</li>
-                    <li><span class="highlight">Lucky Gold Box</span> Every 50 clicks, a Golden Box appears for 3 seconds.</li>
-                    <li><span class="highlight">🎨 Dynamic Theme System (Visual Progression)</span> Level up changes the theme: Level 0–25 → Default dark theme Level 26–50 → Neon Blue / Cyberpunk theme Level 51–75 → Lava / Hell theme Level 76–100 → Golden / Legendary theme</li>
-                </ul>
-            </div>
-        </div>
+        <div style="margin-top:12px;"><strong>🚀 V1.2 Changelog:</strong></div>
+        <ul class="changelog">
+          <li><span class="highlight">Combo System</span> — Clicking again within 1s grants combo multipliers (x2, x3...).</li>
+          <li><span class="highlight">Lucky Gold Box</span> — Every 50 clicks a Golden Box appears for 3s (10x reward).</li>
+          <li><span class="highlight">Dynamic Theme System</span> — Themes change by level (0–25 dark, 26–50 neon, 51–75 lava, 76–100 golden).</li>
+        </ul>
+      </div>
+    </div>
 
-        <a href="OVER-THE-TOP-BOX-1.2.zip" class="download-btn" download
-   onclick="showThanksMsg(event)">
-    📦 İNDİR / DOWNLOAD V1.2 (.ZIP)
-</a>
+    <div class="actions" style="margin-top:18px">
+      <a href="OVER-THE-TOP-BOX-1.2.zip" class="download-btn" download onclick="showPopup(event)">
+        📦 İNDİR / DOWNLOAD V1.2 (.ZIP)
+      </a>
+      <div class="note">Not: İndirme başlamazsa tarayıcı izinlerini veya bağlantı yolunu kontrol edin.</div>
+    </div>
+  </div>
+</div>
 
-<!-- Mesaj kutusu -->
-<div id="thanks-msg" style="
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,255,204,0.1);
-    backdrop-filter: blur(10px);
-    padding: 15px 25px;
-    border-radius: 12px;
-    color: #00ffcc;
-    font-weight: bold;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,255,204,0.3);
-    opacity: 0;
-    transition: opacity 0.5s;
-    z-index: 999;
-">
-    Oyunumuzu indirdiğin için teşekkürler! / Thanks for downloading our game!
+<!-- POPUP: orta ekranda, büyük, mat, X ile kapanır -->
+<div id="thanks-popup" role="dialog" aria-modal="true" aria-labelledby="thanks-title">
+  <button class="close-btn" aria-label="Kapat" onclick="closePopup()">×</button>
+  <div id="thanks-title" style="margin-top:6px;line-height:1.2">
+    Oyunumuzu indirdiğin için teşekkürler!<br>
+    Thanks for downloading our game!
+  </div>
 </div>
 
 <script>
-function showThanksMsg(e) {
-    const msg = document.getElementById('thanks-msg');
-    msg.style.opacity = 1; // Göster
-    setTimeout(() => {
-        msg.style.opacity = 0; // 3 saniye sonra kaybol
-    }, 3000);
-}
-</script>
+/* Popup fonksiyonları */
+function showPopup(e){
+  // mesajı göster
+  const popup = document.getElementById('thanks-popup');
+  popup.classList.add('show');
 
-            
-        </a>
-    </div>
+  // otomatik kapanma (5s)
+  clearTimeout(window._popupTimeout);
+  window._popupTimeout = setTimeout(()=> popup.classList.remove('show'), 5000);
+
+  // not: indirme davranışını engellemiyoruz => kullanıcı dosya indirmeye devam eder
+}
+
+function closePopup(){
+  const popup = document.getElementById('thanks-popup');
+  popup.classList.remove('show');
+  clearTimeout(window._popupTimeout);
+}
+
+/* Erişilebilirlik: ESC ile kapatma */
+document.addEventListener('keydown', (ev)=>{
+  if(ev.key === 'Escape') closePopup();
+});
+</script>
 
 </body>
 </html>
-
-
