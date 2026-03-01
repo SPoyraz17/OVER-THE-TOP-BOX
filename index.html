@@ -168,11 +168,47 @@
             </div>
         </div>
 
-        <a href="OVER-THE-TOP-BOX-1.2.zip" class="download-btn" download>
-            📦 İNDİR / DOWNLOAD V1.2 (.ZIP)
+        <a href="OVER-THE-TOP-BOX-1.2.zip" class="download-btn" download
+   onclick="showThanksMsg(event)">
+    📦 İNDİR / DOWNLOAD V1.2 (.ZIP)
+</a>
+
+<!-- Mesaj kutusu -->
+<div id="thanks-msg" style="
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,255,204,0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 12px;
+    color: #00ffcc;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,255,204,0.3);
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 999;
+">
+    Oyunumuzu indirdiğin için teşekkürler! / Thanks for downloading our game!
+</div>
+
+<script>
+function showThanksMsg(e) {
+    const msg = document.getElementById('thanks-msg');
+    msg.style.opacity = 1; // Göster
+    setTimeout(() => {
+        msg.style.opacity = 0; // 3 saniye sonra kaybol
+    }, 3000);
+}
+</script>
+
+            
         </a>
     </div>
 
 </body>
 </html>
+
 
