@@ -1,6 +1,6 @@
 # OVER‑THE‑TOP BOX 🎮
 
-![OYUN LOGOSU](Screenshots/OVER-THE-TOP-BOX-1.2.png]
+![OYUN LOGOSU](Screenshots/OVER-THE-TOP-BOX-1.2.png)
 Refleks tabanlı, tek HTML dosyasında çalışan bir tıklama oyunu.  
 A reflex‑based click game running in a single HTML file.
 
@@ -101,5 +101,6 @@ Delete the old version folder and use the new one.
 ## 📜 Lisans / License
 Bu proje kişisel kullanım içindir.  
 This project is for personal use only.
+
 
 
